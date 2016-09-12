@@ -51,6 +51,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AspNetRole.cs" />
+    <Compile Include="AspNetUser.cs" />
+    <Compile Include="AspNetUserClaim.cs" />
+    <Compile Include="AspNetUserLogin.cs" />
+    <Compile Include="AspNetUserRole.cs" />
+    <Compile Include="C__MigrationHistory.cs" />
     <Compile Include="Job.cs" />
     <Compile Include="JobModel.cs" />
     <Compile Include="JobRole.cs" />

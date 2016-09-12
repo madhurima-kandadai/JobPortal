@@ -13,11 +13,18 @@ namespace JobPortal.Entities
 
         public int? JobId { get; set; }
 
-        public int? SeekerId { get; set; }
+        [StringLength(128)]
+        public string SeekerId { get; set; }
 
         [Column(TypeName = "date")]
         public DateTime? AppliedDate { get; set; }
 
-        public int? Status { get; set; }
+        public int? StatusId { get; set; }
+
+        public virtual AspNetUser AspNetUser { get; set; }
+
+        public virtual Job Job { get; set; }
+
+        public virtual JobStatus JobStatu { get; set; }
     }
 }

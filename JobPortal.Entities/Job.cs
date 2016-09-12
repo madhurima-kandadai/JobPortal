@@ -9,9 +9,17 @@ namespace JobPortal.Entities
     [Table("Job")]
     public partial class Job
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Job()
+        {
+            JobSubmissions = new HashSet<JobSubmission>();
+        }
+
         public int Id { get; set; }
 
-        public int RecruiterId { get; set; }
+        [Required]
+        [StringLength(128)]
+        public string RecruiterId { get; set; }
 
         [Required]
         [StringLength(100)]
@@ -24,5 +32,10 @@ namespace JobPortal.Entities
 
         [Column(TypeName = "date")]
         public DateTime? LastDate { get; set; }
+
+        public virtual AspNetUser AspNetUser { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<JobSubmission> JobSubmissions { get; set; }
     }
 }
