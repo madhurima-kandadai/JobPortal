@@ -150,8 +150,16 @@ namespace JobPortal.Web.Controllers
         public async Task<ActionResult> Register(RegisterViewModel model)
         {
             if (ModelState.IsValid)
-            {
+            {                
                 var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                if (model.LoginAsRecruiter)
+                {
+                    user.RoleId = 1;
+                }
+                else
+                {
+                    user.RoleId = 2;
+                }
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
