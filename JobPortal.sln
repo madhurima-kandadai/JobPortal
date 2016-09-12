@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JobPortal.Entities", "JobPortal.Entities\JobPortal.Entities.csproj", "{88DE3DC5-D37C-46D3-8628-49A8EBB19F85}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JobPortal.Services", "JobPortal.Services\JobPortal.Services.csproj", "{4BB2BE97-6BEA-4FB7-B5B5-A83B149466E2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JobPortal.Web", "JobPortal.Web\JobPortal.Web.csproj", "{2EE435B4-F9C1-41AE-BA1D-9B6CECF794C1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{88DE3DC5-D37C-46D3-8628-49A8EBB19F85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88DE3DC5-D37C-46D3-8628-49A8EBB19F85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88DE3DC5-D37C-46D3-8628-49A8EBB19F85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88DE3DC5-D37C-46D3-8628-49A8EBB19F85}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BB2BE97-6BEA-4FB7-B5B5-A83B149466E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BB2BE97-6BEA-4FB7-B5B5-A83B149466E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BB2BE97-6BEA-4FB7-B5B5-A83B149466E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BB2BE97-6BEA-4FB7-B5B5-A83B149466E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2EE435B4-F9C1-41AE-BA1D-9B6CECF794C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EE435B4-F9C1-41AE-BA1D-9B6CECF794C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EE435B4-F9C1-41AE-BA1D-9B6CECF794C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EE435B4-F9C1-41AE-BA1D-9B6CECF794C1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
