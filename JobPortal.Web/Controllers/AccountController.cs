@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using JobPortal.Web.Models;
+using JobPortal.Services.Services;
 
 namespace JobPortal.Web.Controllers
 {
@@ -17,15 +18,16 @@ namespace JobPortal.Web.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
-
+        LoginService loginService;
         public AccountController()
         {
         }
 
-        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
+        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager, LoginService service )
         {
             UserManager = userManager;
             SignInManager = signInManager;
+            loginService = service;
         }
 
         public ApplicationSignInManager SignInManager
@@ -55,7 +57,7 @@ namespace JobPortal.Web.Controllers
         //
         // GET: /Account/Login
         [AllowAnonymous]
-        public ActionResult Login(string returnUrl)
+        public ActionResult Login(string returnUrl = "")
         {
             ViewBag.ReturnUrl = returnUrl;
             return View();

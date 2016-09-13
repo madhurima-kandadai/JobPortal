@@ -8,7 +8,7 @@ namespace JobPortal.Entities
     public partial class JobModel : DbContext
     {
         public JobModel()
-            : base("name=JobModel")
+            : base("name=DefaultConnection")
         {
         }
 
