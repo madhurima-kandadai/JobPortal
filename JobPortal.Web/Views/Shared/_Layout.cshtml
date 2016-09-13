@@ -6,6 +6,8 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    <script src="~/Scripts/angular.js"></script>
+    <script src="~/Scripts/JobPortalScripts/app.js"></script>
 
 </head>
 <body>
@@ -20,7 +22,7 @@
                 @Html.ActionLink("Job Portal", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">                    
+                <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Jobs", "About", "Home")</li>
                     <li>@Html.ActionLink("Submissions", "Contact", "Home")</li>
                 </ul>
@@ -28,7 +30,7 @@
             </div>
         </div>
     </div>
-    <div class="container body-content">
+    <div class="container body-content" ng-app="JobPortal">
         @RenderBody()
         <hr />
         <footer>
