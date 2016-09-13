@@ -42,6 +42,7 @@ namespace JobPortal.Web.App_Start
 
             // TODO: Register your types here
             container.RegisterType(typeof(IJobService), typeof(JobService));
+            container.RegisterType(typeof(ILoginService), typeof(LoginService));
         }
     }
 }
