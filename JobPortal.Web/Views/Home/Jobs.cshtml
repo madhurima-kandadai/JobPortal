@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "Jobs";
+}
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+<script src="~/Scripts/JobPortalScripts/JobController.js"></script>
+<div ng-controller="JobController">
+    <div ng-show="isRecruiter">
+        <div>
+            <label>Job Title</label>
+            <input type="text" ng-model="addJob.JobTitle" />
+        </div>
+        <div>
+            <label>Job Description</label>
+            <textarea ng-model="addJob.JobDescription"></textarea>
+        </div>
+        <button ng-click="SaveJob(addJob)">Save Job</button>
+    </div>
+    <div>
+        <div><input type="text" ng-model="searchText" placeholder="Search Jobs" /></div>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Job Title</th>
+                    <th>Job Description</th>
+                    <th>Recruiter</th>
+                    <th>Last Date</th>
+                    <th ng-show="isRecruiter"></th>
+                    <th ng-show="isRecruiter"></th>
+                    <th ng-show="!isRecruiter"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="job in jobs | filter:searchText">
+                    <td>{{job.JobTitle}}</td>
+                    <td>{{job.JobDescription}}</td>
+                    <td>{{job.RecruiterName}}</td>
+                    <td>{{job.LastDate | date}}</td>
+                    <td ng-show="isRecruiter"><button ng-click="EditJob(job)">Edit Job</button></td>
+                    <td ng-show="isRecruiter"><button ng-click="DeleteJob(job.Id)">Delete Job</button></td>
+                    <td ng-show="!isRecruiter"><button ng-click="ApplyJob(job)">Apply Job</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

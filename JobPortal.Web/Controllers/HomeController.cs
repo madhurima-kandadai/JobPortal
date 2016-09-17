@@ -20,13 +20,13 @@ namespace JobPortal.Web.Controllers
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult Jobs()
         {
             if (Request.RequestContext.HttpContext.User.Identity.IsAuthenticated)
             {
                 ViewBag.Message = "Your Jobs Page page.";
 
-                return View();
+                return View("../Home/Jobs");
             }
             else
             {
@@ -35,13 +35,13 @@ namespace JobPortal.Web.Controllers
             }
         }
 
-        public ActionResult Contact()
+        public ActionResult Submissions()
         {
             if (Request.RequestContext.HttpContext.User.Identity.IsAuthenticated)
             {
                 ViewBag.Message = "Your Job Submissions page.";
 
-                return View();
+                return View("../Home/JobSubmissions");
             }
             else
             {

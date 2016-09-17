@@ -286,8 +286,8 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Jobs.cshtml" />
+    <Content Include="Views\Home\JobSubmissions.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
@@ -325,8 +325,12 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\JobPortal.Entities\JobPortal.Entities.csproj">
-      <Project>{88de3dc5-d37c-46d3-8628-49a8ebb19f85}</Project>
+      <Project>{88DE3DC5-D37C-46D3-8628-49A8EBB19F85}</Project>
       <Name>JobPortal.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JobPortal.Models\JobPortal.Models.csproj">
+      <Project>{8f992c13-e9ea-4ba8-854e-ddf9f9a2245b}</Project>
+      <Name>JobPortal.Models</Name>
     </ProjectReference>
     <ProjectReference Include="..\JobPortal.Services\JobPortal.Services.csproj">
       <Project>{4bb2be97-6bea-4fb7-b5b5-a83b149466e2}</Project>

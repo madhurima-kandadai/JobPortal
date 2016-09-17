@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JobPortal.Services", "JobPo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JobPortal.Web", "JobPortal.Web\JobPortal.Web.csproj", "{2EE435B4-F9C1-41AE-BA1D-9B6CECF794C1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JobPortal.Models", "JobPortal.Models\JobPortal.Models.csproj", "{8F992C13-E9EA-4BA8-854E-DDF9F9A2245B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{2EE435B4-F9C1-41AE-BA1D-9B6CECF794C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2EE435B4-F9C1-41AE-BA1D-9B6CECF794C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2EE435B4-F9C1-41AE-BA1D-9B6CECF794C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F992C13-E9EA-4BA8-854E-DDF9F9A2245B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F992C13-E9EA-4BA8-854E-DDF9F9A2245B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F992C13-E9EA-4BA8-854E-DDF9F9A2245B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F992C13-E9EA-4BA8-854E-DDF9F9A2245B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
