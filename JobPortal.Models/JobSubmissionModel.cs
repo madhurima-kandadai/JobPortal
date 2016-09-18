@@ -19,5 +19,9 @@ namespace JobPortal.Models
         public int? StatusId { get; set; }
 
         public string SeekerName { get; set; }
+
+        public string JobDescription { get; set; }
+
+        public string RecruiterName { get; set; }
     }
 }

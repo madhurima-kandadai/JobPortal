@@ -23,5 +23,9 @@ namespace JobPortal.Services.Interfaces
         void ApplyJob(JobSubmissionModel jobSubmission);
 
         List<JobSubmissionModel> GetSubmissions(string seekerId);
+
+        List<JobDetailsModel> GetJobsByRecruiter(string recruiterId);
+
+        List<JobSubmissionModel> GetJobSubmissionsByRecruiter(string recruiterId);
     }
 }

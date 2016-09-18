@@ -36,9 +36,12 @@
                     <td>{{job.JobDescription}}</td>
                     <td>{{job.RecruiterName}}</td>
                     <td>{{job.LastDate | date}}</td>
-                    <td ng-show="isRecruiter"><button ng-click="EditJob(job)">Edit Job</button></td>
                     <td ng-show="isRecruiter"><button ng-click="DeleteJob(job.Id)">Delete Job</button></td>
-                    <td ng-show="!isRecruiter"><button ng-click="ApplyJob(job)">Apply Job</button></td>
+                    <td ng-show="!isRecruiter">
+                        <button ng-click="ApplyJob(job)">Apply Job</button>
+                        <input type="file" file-model="myFile" />
+                        <button ng-click="uploadFile()">upload me</button>
+                    </td>
                 </tr>
             </tbody>
         </table>

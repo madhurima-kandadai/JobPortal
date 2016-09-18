@@ -32,7 +32,7 @@ namespace JobPortal.Web.Controllers
             var isRecruiter = this.loginService.GetUser(mailId);
             if (isRecruiter)
             {
-
+                return Json(this.jobService.GetJobsByRecruiter(mailId), JsonRequestBehavior.AllowGet);
             }
             var result = this.jobService.GetAllJobs();
             return Json(result, JsonRequestBehavior.AllowGet);
