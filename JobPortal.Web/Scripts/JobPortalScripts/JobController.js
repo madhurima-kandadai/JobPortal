@@ -16,6 +16,15 @@
         };
     }]);
 
+    $scope.GetDateFormat = function (dateString) {
+        var currentTime = new Date(parseInt(dateString));
+        var month = currentTime.getMonth() + 1;
+        var day = currentTime.getDate();
+        var year = currentTime.getFullYear();
+        var date = day + "/" + month + "/" + year;
+        return date;
+    };
+
     $scope.test = "job controller";
 
     function GetCurrentUser() {
@@ -27,6 +36,9 @@
     function GetJobs() {
         $http.get('/job/GetJobs/').success(function (response) {
             $scope.jobs = response;
+            angular.forEach($scope.jobs, function (obj) {
+                obj.LastDate = $scope.GetDateFormat(obj.LastDate.substr(6));
+            });
         });
     };
     GetCurrentUser();
@@ -50,9 +62,8 @@
         }
     };
 
-    $scope.ApplyJob = function (job) {
-        debugger;
-        var x = prompt("Are you sure ?");
+    $scope.ApplyJob = function (job) {        
+        $scope.fileModel = null;        
         $http.post('/job/ApplyJob?job=' + JSON.stringify(job)).success(function (response) {
             $scope.addJob = {};
             GetJobs();

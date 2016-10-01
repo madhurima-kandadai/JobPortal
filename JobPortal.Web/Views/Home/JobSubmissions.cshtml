@@ -5,5 +5,23 @@
 <h3>@ViewBag.Message</h3>
 <script src="~/Scripts/JobPortalScripts/JobSubmissionController.js"></script>
 <div ng-controller="JobSubmissionController">
-    {{test}}
+    <div>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Job Title</th>
+                    <th>Job Description</th>                    
+                    <th>Applied Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="jobSub in JobSubmissions">
+                    <td>{{jobSub.JobTitle}}</td>
+                    <td>{{jobSub.JobDescription}}</td>                    
+                    <td>{{jobSub.AppliedDate | date:'dd/MM/yyyy'}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
 </div>

@@ -33,14 +33,12 @@
             <tbody>
                 <tr ng-repeat="job in jobs | filter:searchText">
                     <td>{{job.JobTitle}}</td>
-                    <td>{{job.JobDescription}}</td>
-                    <td>{{job.RecruiterName}}</td>
-                    <td>{{job.LastDate | date}}</td>
+                    <td>{{job.JobDescription}}</td>                    
+                    <td>{{job.LastDate}}</td>
                     <td ng-show="isRecruiter"><button ng-click="DeleteJob(job.Id)">Delete Job</button></td>
-                    <td ng-show="!isRecruiter">
+                    <td ng-show="!isRecruiter">                        
+                        <input type="file" ng-model="fileModel" file-model="myFile" />
                         <button ng-click="ApplyJob(job)">Apply Job</button>
-                        <input type="file" file-model="myFile" />
-                        <button ng-click="uploadFile()">upload me</button>
                     </td>
                 </tr>
             </tbody>

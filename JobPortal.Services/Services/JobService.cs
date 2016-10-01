@@ -86,21 +86,21 @@ namespace JobPortal.Services.Services
 
         public List<JobSubmissionModel> GetSubmissions(string seekerId)
         {
-            var users = dbModel.AspNetUsers.AsQueryable();
+            var userId = dbModel.AspNetUsers.FirstOrDefault(x => x.Email == seekerId).Id;
             var jobs = dbModel.Jobs.AsQueryable();
             var jobStatus = dbModel.JobStatus.AsQueryable();
             var jobsubmissions = dbModel.JobSubmissions.AsQueryable();
-            var query = (from user in users
-                        join job in jobs on user.Id equals job.RecruiterId
-                        join jobSub in jobsubmissions on job.Id equals jobSub.JobId
-                        join stat in jobStatus on jobSub.StatusId equals stat.Id
-                        where user.Email == seekerId
-                        select new JobSubmissionModel
-                        {
-                            Id = jobSub.Id,
-                            JobDescription = job.JobDescription,
-                            AppliedDate = jobSub.AppliedDate                            
-                        }).ToList();                     
+            var query = (from job in jobs
+                         join jobSub in jobsubmissions on job.Id equals jobSub.JobId
+                         join stat in jobStatus on jobSub.StatusId equals stat.Id
+                         where jobSub.SeekerId == userId
+                         select new JobSubmissionModel
+                         {
+                             Id = jobSub.Id,
+                             JobDescription = job.JobDescription,
+                             JobTitle = job.JobTitle,
+                             AppliedDate = jobSub.AppliedDate
+                         }).ToList();
             return query;
         }
 
@@ -110,7 +110,7 @@ namespace JobPortal.Services.Services
             var users = dbModel.AspNetUsers.AsQueryable();
             var query = (from user in users
                          join job in jobs on user.Id equals job.RecruiterId
-                         where job.RecruiterId == recruiterId
+                         where user.Email == recruiterId
                          select new JobDetailsModel
                          {
                              Id = job.Id,
@@ -121,12 +121,29 @@ namespace JobPortal.Services.Services
                              JobTitle = job.JobTitle,
                              CreatedDate = job.CreatedDate
                          }).ToList();
-            return query;            
+            return query;
         }
 
         public List<JobSubmissionModel> GetJobSubmissionsByRecruiter(string recruiterId)
         {
-            return null;
+            var userId = dbModel.AspNetUsers.FirstOrDefault(x => x.Email == recruiterId).Id;
+            var users = dbModel.AspNetUsers.AsQueryable();
+            var jobs = dbModel.Jobs.AsQueryable();
+            var jobStatus = dbModel.JobStatus.AsQueryable();
+            var jobsubmissions = dbModel.JobSubmissions.AsQueryable();
+            var query = (from user in users
+                         join job in jobs on user.Id equals job.RecruiterId
+                         join jobSub in jobsubmissions on job.Id equals jobSub.JobId
+                         join stat in jobStatus on jobSub.StatusId equals stat.Id
+                         where job.RecruiterId == userId
+                         select new JobSubmissionModel
+                         {
+                             Id = jobSub.Id,
+                             JobTitle = job.JobTitle,                             
+                             JobDescription = job.JobDescription,
+                             AppliedDate = jobSub.AppliedDate
+                         }).ToList();
+            return query;
         }
     }
 }

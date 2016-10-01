@@ -23,5 +23,7 @@ namespace JobPortal.Models
         public string JobDescription { get; set; }
 
         public string RecruiterName { get; set; }
+
+        public string JobTitle { get; set; }        
     }
 }
